@@ -260,46 +260,8 @@ There's just one thing you can't do yet. Try to `git push` your changes to the _
 You'll see the following error and - as git is always ready to help - a suggestion how to resolve the issue: 
 
 ```ShellSession
-fatal: The current branch change_alice has no upstream branch.
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream origin change_alice 
-```
-
-But we don't just want to blindly do that. We're here to understand what's actually going on. So what are _upstream branches_ and _remotes_?
-
-Remember when we `cloned` the _Remote Repository_ a while ago? At that point it didn't only contain this tutorial and `Alice.txt` but actually two branches. 
-
-The _master_ we just went ahead and started working on, and the one I called "tutorial_wip" on which I commit all the changes I make to this tutorial. 
-
-When we copied the things in the _Remote Repository_ into your _Dev Environment_ a few extra steps happened under the hood. 
-
-Git setup the _remote_ of your _Local Repository_ to be the _Remote Repository_ you cloned and gave it the default name `origin`. 
-
->Your _Local Repository_ can track several _remotes_ and they can have different names, but we'll stick to the `origin` and nothing else for this tutorial. 
-
-Then it copied the two remote branches into your _Local Repository_ and finally it `checkout`ed _master_ for you. 
-
-When doing that, another implicit step happens. When you `checkout` a branch name that has an exact match in the remote branches, you will get a new _local_ branch that is linked to the _remote_ branch. The _remote_ branch is the _upstream branch_ of your _local_ one. 
-
-In the diagrams earlier you can see just the local branches you have. You can see that list of local branches by running `git branch`. 
-
-If you want to also see the _remote_ branches your _Local Repository_ knows, you can use `git branch -a` to list all of them.
-
-![Remote and local branches`](img/branches.png)
-
-Now we can call the suggested `git push --set-upstream origin change_alice`, and `push` the changes on our branch to a new _remote_. This will create a `change_alice` branch on the _Remote Repository_ and set our _local_ `change_alice` to track that new branch. 
-
-> There is another option if we actually want our branch to track something that already exists on the _Remote Repository_. Maybe a colleague has already pushed some changes, while we were working on some related issue on our local branch, and we'd like to integrate the two. Then we could just set the _upstream_ for our `change_alice` branch to a new _remote_ by using `git branch --set-upstream-to=origin/change_alice` and from there to track the _remote_ branch.
-
-After that went through have a look at your _Remote Repository_ on github, your branch will be there, ready for other people to see and work with. 
-
-We'll get to how you can get other people's changes into your _Dev Environment_ soon, but first we'll work a bit more with branches, to introduce all the concepts that also come into play when we get new things from the _Remote Repository_. 
-
-## Merging
-
-As you and everyone else will generally be working on branches, we need to talk about how to get changes from one branch into the other by _merging_ them. 
-
+l generally be working on branches, we need to talk about how to get changes from one branch into the other by _merging_ them. 
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 <!-- NO CONFLICT -->
 We've just changed `Alice.txt` on the `change_alice` branch, and I'd say we're happy with the changes we made. 
 
