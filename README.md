@@ -263,43 +263,8 @@ You'll see the following error and - as git is always ready to help - a suggesti
 l generally be working on branches, we need to talk about how to get changes from one branch into the other by _merging_ them. 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 <!-- NO CONFLICT -->
-We've just changed `Alice.txt` on the `change_alice` branch, and I'd say we're happy with the changes we made. 
-
-If you go and `git checkout master`, the `commit` we made on the other branch will not be there. To get the changes into master we need to `merge` the `change_alice` branch _into_ master. 
-
-Note that you always `merge` a particular branch _into_ the one you're currently at. 
-
-### Fast-Forward merging
-
-As we've already `checked out` _master_, we can now `git merge change_alice`. 
-
-As there are no other _conflicting_ changes to `Alice.txt`, and we've changed nothing on _master_, this will go through without a hitch in what is called a _fast forward_ merge. 
-
-In the diagrams below, you can see that this just means that the _master_ pointer can simply be advanced to where the _change_alice_ one already is. 
-
-The first diagram shows the state before our `merge`, _master_ is still at the commit it originally was, and on the other branch we've made one more commit. 
-
-![Before fast forward merge](img/before_ff_merge.png)
-
-The second diagram shows what has changed with our `merge`.
-
-![After fast forward merge](img/ff_merge.png)
-
-### Merging divergent branches
-
-Let's try something more complex. 
-
-Add some text on a new line to `Bob.txt` on _master_ and commit it. 
-
-Then `git checkout change_alice`, change `Alice.txt` and commit. 
-
-In the diagram below you see how our commit history now looks. Both _master_ and `change_alice` originated from the same commit, but since then they _diverged_, each having their own additional commit. 
-
-![Divergent commits](img/branches_diverge.png)
-
-If you now switch back to master (`git checkout master`) and do `git merge change_alice` a fast-forward merge is not possible. Instead your favorite text editor will open and allow you to change the message of the `merge commit` git is about to make in order to get the two branches back together. You can just go with the default message right now. The diagram below shows the state of our git history after we the `merge`.
-
-![Merging branches](img/merge.png)
+We've just changed `Alice.txt` queeeeeeeeeeeeeeeeeee
+img/merge.png)
 
 The new commit introduces the changes that we've made on the `change_alice` branch into master. 
 
